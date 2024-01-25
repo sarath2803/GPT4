@@ -13,7 +13,7 @@ prompt = PromptTemplate(template=template, input_variables=["question"])
 
 
 def get_llm_response(question):
-    llm_chain = LLMChain(prompt=prompt,llm=HuggingFaceHub(repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",model_kwargs={"temperature":0.6,"max_length":128}))
+    llm_chain = LLMChain(prompt=prompt,llm=HuggingFaceHub(repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",model_kwargs={"temperature":0.6,"max_length":10000}))
     response=llm_chain.run(question)
     return response
 
